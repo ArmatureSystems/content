@@ -131,9 +131,11 @@ def test_module(client):
     Performs basic get request to get information on all WootCloud provided assets
     """
     # using wootassets to test API
-    test = client.http_request('GET', 'wootassets')
-    if test == :
-        pass
+    try:
+        test = client.http_request('GET', 'wootassets')
+        return 'ok'
+    except Exception as e:
+        return 'not ok'
 
 def fetch_single_alert(client, alert_id, type):
     """ Fetches single packet by ID. """
